@@ -11,12 +11,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/admin/'],
+        disallow: ['/api/', '/admin/', '/navkriti-26', '/navkriti-26/', '/navkriti26', '/navkriti26/'],
       },
       {
         userAgent: 'Googlebot',
         allow: '/',
-        disallow: ['/api/', '/admin/'],
+        disallow: ['/api/', '/admin/', '/navkriti-26', '/navkriti-26/', '/navkriti26', '/navkriti26/'],
       },
     ],
     sitemap: 'https://rawwebsite-seven.vercel.app/sitemap.xml',

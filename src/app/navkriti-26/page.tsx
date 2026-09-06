@@ -416,6 +416,13 @@ export default function TasksPage() {
       document.head.appendChild(metaDesc);
     }
     metaDesc.setAttribute('content', "Official NAVKRITI '26 hackathon and task submission portal of Robotics and Aviation Wing (RAW) for Smart India Hackathon.");
+    let metaRobots = document.querySelector('meta[name="robots"]');
+    if (!metaRobots) {
+      metaRobots = document.createElement('meta');
+      metaRobots.setAttribute('name', 'robots');
+      document.head.appendChild(metaRobots);
+    }
+    metaRobots.setAttribute('content', 'noindex, nofollow');
   }, []);
 
   const totalTasks = categories.reduce((s, c) => s + c.tasks.length, 0);
@@ -552,6 +559,7 @@ export default function TasksPage() {
     <main>
       <title>NAVKRITI &apos;26 | Team RAW Hackathon Portal</title>
       <meta name="description" content="Official NAVKRITI '26 hackathon and task submission portal of Robotics and Aviation Wing (RAW) for Smart India Hackathon." />
+      <meta name="robots" content="noindex, nofollow" />
       <Navbar />
 
       {/* ── Hero ── */}
@@ -586,7 +594,7 @@ export default function TasksPage() {
           </p>
         </motion.div>
       </section>
-
+      
       {/* ── Submit CTA ──
       <motion.section
         className={styles.cta}
