@@ -10,7 +10,7 @@ import Footer from '@/app/components/Footer';
 import { motion } from 'framer-motion';
 import { BarChart3, Trophy, Handshake, FileText, Mail, MapPin, Download } from 'lucide-react';
 import KineticGrid from '@/components/ui/kinetic-grid';
-import { LogoCloud } from '@/components/ui/logo-cloud-2';
+import { LogoCloud } from '@/components/ui/logo-cloud';
 import styles from '@/app/styles/Sponsors.module.css';
 import {
   Timeline,
@@ -695,7 +695,7 @@ const SoftwaresWeUse = () => {
               margin: '0 0 1rem 0',
             }}
           >
-            Companies We <span style={{ color: 'var(--color-red)' }}>Collaborate</span> With
+            Softwares & Tools <span style={{ color: 'var(--color-red)' }}>We Use</span>
           </h2>
           <p
             style={{
@@ -710,7 +710,9 @@ const SoftwaresWeUse = () => {
           </p>
         </motion.div>
 
-        <LogoCloud />
+        <div>
+          <LogoCloud />
+        </div>
       </div>
     </section>
   );

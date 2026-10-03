@@ -438,7 +438,7 @@
   animation: bounce 2s infinite;
 
   @media (max-width: 768px) {
-    bottom: 20px;
+    display: none !important;
   }
 }
 

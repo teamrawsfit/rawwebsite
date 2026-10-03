@@ -262,21 +262,21 @@ export const BotsHeroCarousel: React.FC<BotsHeroCarouselProps> = ({
 
 
       {/* 1. Top Header Badge & Countdown Bar */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '0.4rem', zIndex: 20, width: '100%' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'var(--color-bg-card, rgba(255,255,255,0.9))', backdropFilter: 'blur(8px)', padding: '0.35rem 0.75rem', borderRadius: '9999px', border: '1px solid var(--color-border, rgba(0,0,0,0.1))' }}>
-          <div style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#ef4444', boxShadow: '0 0 8px #ef4444' }} />
-          <span style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono, monospace)' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '0.4rem', zIndex: 20, width: '100%', flexWrap: 'wrap', gap: '0.4rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', background: 'var(--color-bg-card, rgba(255,255,255,0.9))', backdropFilter: 'blur(8px)', padding: '0.3rem 0.65rem', borderRadius: '9999px', border: '1px solid var(--color-border, rgba(0,0,0,0.1))', flexWrap: 'wrap', maxWidth: '100%' }}>
+          <div style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#ef4444', boxShadow: '0 0 8px #ef4444', flexShrink: 0 }} />
+          <span style={{ fontSize: '0.7rem', fontWeight: 600, letterSpacing: '0.04em', textTransform: 'uppercase', color: 'var(--color-text-primary)', fontFamily: 'var(--font-mono, monospace)', whiteSpace: 'nowrap' }}>
             {currentBot.year} • {currentBot.botNum}
           </span>
           {currentBot.tag && (
-            <span style={{ fontSize: '0.65rem', backgroundColor: 'rgba(225, 6, 0, 0.12)', color: 'var(--color-red, #ef4444)', padding: '0.15rem 0.5rem', borderRadius: '9999px', border: '1px solid rgba(225, 6, 0, 0.3)', fontWeight: 600 }}>
+            <span style={{ fontSize: '0.62rem', backgroundColor: 'rgba(225, 6, 0, 0.12)', color: 'var(--color-red, #ef4444)', padding: '0.12rem 0.45rem', borderRadius: '9999px', border: '1px solid rgba(225, 6, 0, 0.3)', fontWeight: 600, whiteSpace: 'nowrap' }}>
               {currentBot.tag}
             </span>
           )}
         </div>
 
         {/* 5-second countdown timer indicator */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'var(--color-bg-card, rgba(255,255,255,0.9))', backdropFilter: 'blur(8px)', padding: '0.35rem 0.65rem', borderRadius: '9999px', border: '1px solid var(--color-border, rgba(0,0,0,0.1))' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', background: 'var(--color-bg-card, rgba(255,255,255,0.9))', backdropFilter: 'blur(8px)', padding: '0.3rem 0.55rem', borderRadius: '9999px', border: '1px solid var(--color-border, rgba(0,0,0,0.1))', flexShrink: 0 }}>
           <button
             onClick={() => setIsPaused(!isPaused)}
             title={isPaused ? 'Resume auto-play' : 'Pause auto-play (every 5s)'}
@@ -285,7 +285,7 @@ export const BotsHeroCarousel: React.FC<BotsHeroCarouselProps> = ({
           >
             {isPaused ? <Play size={12} /> : <Pause size={12} />}
           </button>
-          <div style={{ width: 48, height: 5, background: 'var(--color-border, rgba(0,0,0,0.15))', borderRadius: 9999, overflow: 'hidden', position: 'relative' }}>
+          <div style={{ width: 40, height: 5, background: 'var(--color-border, rgba(0,0,0,0.15))', borderRadius: 9999, overflow: 'hidden', position: 'relative' }}>
             {!isPaused && (
               <motion.div
                 key={progressKey}
@@ -306,7 +306,7 @@ export const BotsHeroCarousel: React.FC<BotsHeroCarouselProps> = ({
       </div>
 
       {/* 2. Middle: Robot Image Presentation Container (Direct Squircle Image with Glow) */}
-      <div style={{ position: 'relative', width: '100%', minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'visible', zIndex: 10, margin: '0.75rem 0', background: 'transparent', border: 'none', boxSizing: 'border-box' }}>
+      <div style={{ position: 'relative', width: '100%', minHeight: '240px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'visible', zIndex: 10, margin: '0.5rem 0', background: 'transparent', border: 'none', boxSizing: 'border-box' }}>
         <AnimatePresence custom={direction} initial={false} mode="wait">
           <motion.div
             key={currentBot.id}
@@ -321,10 +321,12 @@ export const BotsHeroCarousel: React.FC<BotsHeroCarouselProps> = ({
               src={encodeURI(currentBot.src)}
               alt={`${currentBot.year} ${currentBot.botNum} - ${currentBot.title}`}
               style={{
-                width: '280px',
-                height: '280px',
+                width: '100%',
+                maxWidth: '280px',
+                height: 'auto',
+                aspectRatio: '1 / 1',
                 objectFit: 'cover',
-                borderRadius: '28px', // Direct squircle crop
+                borderRadius: '24px', // Direct squircle crop
                 boxShadow: '0 16px 36px -6px rgba(0, 0, 0, 0.28), 0 0 28px 2px rgba(225, 6, 0, 0.25)',
                 border: '1px solid var(--color-border, rgba(225, 6, 0, 0.2))',
                 display: 'block',
@@ -345,8 +347,8 @@ export const BotsHeroCarousel: React.FC<BotsHeroCarouselProps> = ({
 
       {/* 3. Bottom Bot Details (in-flow, never clipped) */}
       <div style={{ paddingTop: '0.75rem', borderTop: '1px solid var(--color-border, rgba(0,0,0,0.1))', zIndex: 20, width: '100%', display: 'flex', flexDirection: 'column', gap: '0.45rem', boxSizing: 'border-box' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
-          <h3 style={{ color: 'var(--color-text-primary)', fontWeight: 700, fontSize: '1.05rem', letterSpacing: '0.02em', fontFamily: "'Orbitron', sans-serif", margin: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem', flexWrap: 'wrap' }}>
+          <h3 style={{ color: 'var(--color-text-primary)', fontWeight: 700, fontSize: '1rem', letterSpacing: '0.02em', fontFamily: "'Orbitron', sans-serif", margin: 0, wordBreak: 'break-word' }}>
             {currentBot.title}
           </h3>
           <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono, monospace)', color: 'var(--color-red, #ef4444)', fontWeight: 600, padding: '0.15rem 0.5rem', background: 'rgba(225, 6, 0, 0.1)', borderRadius: '6px', border: '1px solid rgba(225, 6, 0, 0.3)', flexShrink: 0 }}>

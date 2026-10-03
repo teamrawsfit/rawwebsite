@@ -1,0 +1,11 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "watcher": {
+    "ignore": [
+      "graphify-out/**",
+      ".archify/**",
+      ".next/**",
+      "tsconfig.tsbuildinfo"
+    ]
+  }
+}

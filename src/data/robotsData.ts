@@ -34,7 +34,7 @@ export const robotsData: Robot[] = [
     category: 'competition',
     description: 'First robot for DD Robocon 2026 competition featuring SLAM & LiDAR autonomy',
     longDescription: 'Advanced competition robot designed for DD Robocon 2026 with real-time autonomous pathfinding, precision obstacle evasion, and integrated multi-layer sensor fusion.',
-    imageUrl: '/images/bots-hero/2026 r1.jpeg',
+    imageUrl: '/images/2026 r1.PNG',
     specs: ['Autonomous Navigation', 'LiDAR SLAM', 'Multi-task Capability', 'High Precision Control'],
     tags: ['DD Robocon', 'Competition', '2026', 'Autonomous'],
     features: [
@@ -56,7 +56,7 @@ export const robotsData: Robot[] = [
     category: 'competition',
     description: 'Second robot for DD Robocon 2026 featuring high-torque pneumatic gripper',
     longDescription: 'Specialized secondary competition robot equipped with custom pneumatic actuators and high-speed servo grippers for cooperative match strategy.',
-    imageUrl: '/images/bots-hero/2026 r2.jpeg',
+    imageUrl: '/images/2026 bots.jpg',
     specs: ['Pneumatic Gripper', 'High Speed', 'Cooperative Control', 'Custom Gearbox'],
     tags: ['DD Robocon', 'Competition', '2026', 'Manual'],
     features: [
@@ -78,7 +78,7 @@ export const robotsData: Robot[] = [
     category: 'competition',
     description: 'First robot for DD Robocon 2025 competition',
     longDescription: 'Advanced competition robot designed for DD Robocon 2025 challenges with precise control systems and innovative agricultural harvesting mechanisms.',
-    imageUrl: '/images/bots-hero/2025 r1.png',
+    imageUrl: '/images/2025 r1.jpeg',
     specs: ['Autonomous Navigation', 'Manual Control', 'Multi-task Capability', 'High Precision'],
     tags: ['DD Robocon', 'Competition', '2025'],
     features: [
@@ -122,7 +122,7 @@ export const robotsData: Robot[] = [
     category: 'competition',
     description: 'First competition robot for DD Robocon 2024',
     longDescription: 'Proven autonomous rover that participated in DD Robocon 2024, showcasing Team RAW\'s precision line-tracking and mechanical harvesting.',
-    imageUrl: '/images/bots-hero/2024 r1.png',
+    imageUrl: '/images/2024 r1.jpeg',
     specs: ['Autonomous Mode', 'Optical Line Following', 'Task Execution', 'Reliable Performance'],
     tags: ['DD Robocon', 'Competition', '2024'],
     features: [
@@ -166,7 +166,7 @@ export const robotsData: Robot[] = [
     category: 'competition',
     description: 'First competition robot for DD Robocon 2023',
     longDescription: 'Triple-wheel holonomic base with continuous flywheel launcher engineered to cast rings onto scoring poles with high rpm consistency.',
-    imageUrl: '/images/bots-hero/2023 r1.png',
+    imageUrl: '/images/2023 r1.jpeg',
     specs: ['Omni Drive', 'Flywheel Launcher', 'Digital Encoder Feedback', 'High RPM Motors'],
     tags: ['DD Robocon', 'Competition', '2023'],
     features: [
@@ -188,7 +188,7 @@ export const robotsData: Robot[] = [
     category: 'competition',
     description: 'Second competition robot for DD Robocon 2023',
     longDescription: 'Vertical climbing bot designed to ascend competition masts and position scoring banners during stage 2 of the 2023 game.',
-    imageUrl: '/images/bots-hero/2023 r2.png',
+    imageUrl: '/images/2023 r2.jpeg',
     specs: ['Climbing Mechanism', 'High-Torque Planetary Gears', 'Linear Actuation', 'Anti-Slip Grippers'],
     tags: ['DD Robocon', 'Competition', '2023'],
     features: [
@@ -210,7 +210,7 @@ export const robotsData: Robot[] = [
     category: 'competition',
     description: 'Lagori scoring robot for DD Robocon 2022',
     longDescription: 'High-speed disc launching robot built for the traditional Lagori game challenge with adjustable firing angles and precision targeting.',
-    imageUrl: '/images/bots-hero/2022 r1.png',
+    imageUrl: '/images/2022 r1.jpeg',
     specs: ['Disc Launcher', 'Elevation Servo Control', 'Holonomic Base', 'Target Tracking'],
     tags: ['DD Robocon', 'Competition', '2022'],
     features: [
@@ -232,7 +232,7 @@ export const robotsData: Robot[] = [
     category: 'competition',
     description: 'Disc stacking robot for DD Robocon 2022',
     longDescription: 'Automated block and disc retrieval machine capable of sorting and building cylindrical towers under strict time constraints.',
-    imageUrl: '/images/bots-hero/2022 r2.png',
+    imageUrl: '/images/2022r2.jpeg',
     specs: ['Vertical Elevator', 'Magnetic End-Effector', 'Precision Encoder', 'Compact Chassis'],
     tags: ['DD Robocon', 'Competition', '2022'],
     features: [
@@ -254,7 +254,7 @@ export const robotsData: Robot[] = [
     category: 'competition',
     description: 'Virtual and physical competition bot for Robocon 2021',
     longDescription: 'Archery-inspired competition launcher featuring tension springs, pneumatic latches, and laser-guided trajectory verification.',
-    imageUrl: '/images/bots-hero/2021 r1.png',
+    imageUrl: '/images/2021 r1.jpeg',
     specs: ['Spring Catapult', 'Solenoid Release', 'Laser Alignment', 'Custom Motor Drivers'],
     tags: ['DD Robocon', 'Competition', '2021'],
     features: [
@@ -276,7 +276,7 @@ export const robotsData: Robot[] = [
     category: 'competition',
     description: 'Defense barrier robot for Robocon 2021',
     longDescription: 'High-mobility defensive robot with quick-deploy wing barriers to intercept opposing projectiles and protect scoring pots.',
-    imageUrl: '/images/bots-hero/2021 r2.png',
+    imageUrl: '/images/2021 r2.jpeg',
     specs: ['Deployable Barrier', 'High Torque Motors', 'Rapid Acceleration', 'Reinforced Bumpers'],
     tags: ['DD Robocon', 'Competition', '2021'],
     features: [
@@ -298,7 +298,7 @@ export const robotsData: Robot[] = [
     category: 'competition',
     description: 'First robot for DD Robocon 2020 Rugby challenge',
     longDescription: 'Team RAW\'s debut national competition robot engineered to grasp rugby balls and perform automated passes with pneumatic ejectors.',
-    imageUrl: '/images/bots-hero/2020 r1.png',
+    imageUrl: '/images/2020 r1.jpeg',
     specs: ['Pneumatic Pass Mechanism', 'Dual Roller Feed', 'Rugby Gripper', 'Differential Drive'],
     tags: ['DD Robocon', 'Competition', '2020'],
     features: [
@@ -320,7 +320,7 @@ export const robotsData: Robot[] = [
     category: 'competition',
     description: 'Second robot for DD Robocon 2020 Rugby challenge',
     longDescription: 'High-speed interceptor robot designed to receive ball passes on the run and execute Try touchdowns across the scoring line.',
-    imageUrl: '/images/bots-hero/2020 r2.png',
+    imageUrl: '/images/2020 r2.jpeg',
     specs: ['Catching Funnel', 'High Speed Drive', 'Try Touchdown Arm', 'Active Suspension'],
     tags: ['DD Robocon', 'Competition', '2020'],
     features: [

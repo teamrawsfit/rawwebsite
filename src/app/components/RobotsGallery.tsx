@@ -34,14 +34,14 @@ export function getValidRobotImage(name: string = '', year?: number, existingUrl
   const cleanName = (name || '').toLowerCase();
   const yr = year || (cleanName.match(/\b(202\d)\b/) ? parseInt(cleanName.match(/\b(202\d)\b/)![1]) : 2026);
   const isR2 = cleanName.includes('robot 2') || cleanName.includes('r2');
-  if (yr === 2026) return isR2 ? '/images/bots-hero/2026 r2.jpeg' : '/images/bots-hero/2026 r1.jpeg';
-  if (yr === 2025) return isR2 ? '/images/bots-hero/2025 r2.png' : '/images/bots-hero/2025 r1.png';
-  if (yr === 2024) return isR2 ? '/images/bots-hero/2024 r2.png' : '/images/bots-hero/2024 r1.png';
-  if (yr === 2023) return isR2 ? '/images/bots-hero/2023 r2.png' : '/images/bots-hero/2023 r1.png';
-  if (yr === 2022) return isR2 ? '/images/bots-hero/2022 r2.png' : '/images/bots-hero/2022 r1.png';
-  if (yr === 2021) return isR2 ? '/images/bots-hero/2021 r2.png' : '/images/bots-hero/2021 r1.png';
-  if (yr === 2020) return isR2 ? '/images/bots-hero/2020 r2.png' : '/images/bots-hero/2020 r1.png';
-  return '/images/bots-hero/2026 r1.jpeg';
+  if (yr === 2026) return isR2 ? '/images/2026 bots.jpg' : '/images/2026 r1.PNG';
+  if (yr === 2025) return isR2 ? '/images/2025 r1.jpeg' : '/images/2025 r1.jpeg';
+  if (yr === 2024) return isR2 ? '/images/2024 r1.jpeg' : '/images/2024 r1.jpeg';
+  if (yr === 2023) return isR2 ? '/images/2023 r2.jpeg' : '/images/2023 r1.jpeg';
+  if (yr === 2022) return isR2 ? '/images/2022r2.jpeg' : '/images/2022 r1.jpeg';
+  if (yr === 2021) return isR2 ? '/images/2021 r2.jpeg' : '/images/2021 r1.jpeg';
+  if (yr === 2020) return isR2 ? '/images/2020 r2.jpeg' : '/images/2020 r1.jpeg';
+  return '/images/2026 r1.PNG';
 }
 
 export type GalleryUnifiedItem = {
@@ -246,15 +246,15 @@ export default function RobotsGallery() {
         >
           <div className={styles.telemetryCapsule}>
             <span className={styles.pulseDot} />
-            <strong style={{ color: '#ffffff' }}>{robotsCount}</strong> Competition Bots
+            <strong style={{ color: 'var(--color-text-primary)' }}>{robotsCount}</strong> Competition Bots
           </div>
           <div className={styles.telemetryCapsule}>
             <Sparkles size={12} color="#facc15" />
-            <strong style={{ color: '#ffffff' }}>{galleryCount}</strong> Technical Milestones
+            <strong style={{ color: 'var(--color-text-primary)' }}>{galleryCount}</strong> Technical Milestones
           </div>
           <div className={styles.telemetryCapsule}>
             <Calendar size={12} color="#60a5fa" />
-            <strong style={{ color: '#ffffff' }}>2020 – 2026</strong> Timeline
+            <strong style={{ color: 'var(--color-text-primary)' }}>2020 – 2026</strong> Timeline
           </div>
         </motion.div>
       </div>
@@ -405,7 +405,7 @@ export default function RobotsGallery() {
                     </div>
                   </div>
 
-                  {/* FRAME FIT TO IMAGE CONTAINER - STRICT BOUNDING */}
+                  {/* FRAME FIT TO IMAGE CONTAINER - FULL FRAME FILL */}
                   <div
                     className={styles.imageFrame}
                     style={{
@@ -417,24 +417,14 @@ export default function RobotsGallery() {
                       alignItems: 'center',
                       justifyContent: 'center',
                       position: 'relative',
-                      background: 'radial-gradient(circle at 50% 50%, rgba(225, 6, 0, 0.12) 0%, rgba(2, 6, 18, 0.95) 75%)',
-                      border: '1px solid rgba(255, 255, 255, 0.06)',
-                      padding: '0.75rem',
+                      background: 'var(--color-bg-secondary)',
+                      border: '1px solid var(--color-border)',
+                      padding: 0,
                       marginBottom: '1rem',
                       boxSizing: 'border-box',
                     }}
                   >
-                    {/* Subtle spotlight circle */}
-                    <div 
-                      style={{
-                        position: 'absolute',
-                        inset: 0,
-                        pointerEvents: 'none',
-                        background: 'radial-gradient(circle at 50% 50%, rgba(225, 6, 0, 0.14) 0%, transparent 70%)',
-                      }}
-                    />
-
-                    {/* Robot Image with strict frame fit and container bounds */}
+                    {/* Robot Image with full frame fit */}
                     <img
                       src={encodeURI(item.imageUrl)}
                       alt={item.name}
@@ -445,14 +435,10 @@ export default function RobotsGallery() {
                       }}
                       className={item.category === 'robots' ? styles.cardImg : styles.eventImg}
                       style={{
-                        maxWidth: '100%',
-                        maxHeight: '190px',
-                        width: 'auto',
-                        height: 'auto',
-                        objectFit: item.category === 'robots' ? 'contain' : 'cover',
-                        filter: item.category === 'robots' ? 'drop-shadow(0 12px 24px rgba(0, 0, 0, 0.8))' : 'none',
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
                         display: 'block',
-                        margin: '0 auto',
                         pointerEvents: 'none',
                         userSelect: 'none',
                       }}
@@ -551,12 +537,9 @@ export default function RobotsGallery() {
                   alt={activeModalItem.name}
                   className={styles.modalImg}
                   style={{
-                    maxWidth: '100%',
-                    maxHeight: '240px',
-                    width: 'auto',
-                    height: 'auto',
-                    objectFit: 'contain',
-                    filter: 'drop-shadow(0 16px 32px rgba(0,0,0,0.85))',
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
                   }}
                   onError={(e) => {
                     e.currentTarget.onerror = null;

@@ -12,18 +12,18 @@ export interface ThemeToggleProps {
 }
 
 export function ThemeToggle({ className, style }: ThemeToggleProps) {
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
     const saved = localStorage.getItem('raw_theme');
-    if (saved === 'light') {
-      setTheme('light');
-      applyTheme('light');
-    } else {
+    if (saved === 'dark') {
       setTheme('dark');
       applyTheme('dark');
+    } else {
+      setTheme('light');
+      applyTheme('light');
     }
   }, []);
 

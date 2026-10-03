@@ -14,18 +14,18 @@ import styles from '../styles/Footer.module.css';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
     const saved = localStorage.getItem('raw_theme');
-    if (saved === 'light') {
-      setTheme('light');
-      applyTheme('light');
-    } else {
+    if (saved === 'dark') {
       setTheme('dark');
       applyTheme('dark');
+    } else {
+      setTheme('light');
+      applyTheme('light');
     }
   }, []);
 

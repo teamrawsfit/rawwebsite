@@ -225,3 +225,44 @@
   font-weight: 700;
   flex-shrink: 0;
 }
+
+@media (max-width: 640px) {
+  .primaryCard {
+    padding: 1.75rem 1.25rem;
+    min-height: auto;
+  }
+
+  .primaryValue {
+    font-size: 2.75rem;
+  }
+
+  .secondaryCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .secondaryValue {
+    font-size: 1.65rem;
+  }
+
+  .barsContainer {
+    width: 100%;
+    justify-content: space-between;
+    height: 2.25rem;
+  }
+
+  .bar {
+    flex: 1;
+    max-width: 8px;
+  }
+
+  .tertiaryCardA, .tertiaryCardB {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .tertiaryValue {
+    font-size: 1.75rem;
+  }
+}
